@@ -1,0 +1,11 @@
+.cache/
+.vscode/
+.idea/
+.vs/
+
+Binaries/
+
+compile_commands.json
+build.sh
+
+**/Makefile
