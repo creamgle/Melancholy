@@ -5,7 +5,7 @@ workspace "Melancholy_Workspace"
 outputdir = ""
 
 Includes = {}
-Includes["Melancholy"] = "%{wks.location}/Melancholy/Include"
+Includes["Melancholy"] = "%{wks.location}/Melancholy/Source"
 
 include "Melancholy"
 include "Sandbox"

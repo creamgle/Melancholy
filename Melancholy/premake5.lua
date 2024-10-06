@@ -7,12 +7,12 @@ project "Melancholy"
     objdir("%{wks.location}/Binaries/Object/" .. outputdir .. "%{prj.name}")
 
     files {
-        "Include/**.h",
+        "Source/**.h",
         "Source/**.cpp"
     }
 
     includedirs {
-        "Include"
+        "Source"
     }
 
     defines {
