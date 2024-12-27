@@ -1,3 +1,6 @@
 [submodule "Melancholy/Thirdparty/fmt"]
 	path = Melancholy/Thirdparty/fmt
 	url = https://github.com/fmtlib/fmt.git
+[submodule "Melancholy/Thirdparty/glfw"]
+	path = Melancholy/Thirdparty/glfw
+	url = https://github.com/glfw/glfw.git

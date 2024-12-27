@@ -1,7 +1,10 @@
+.DS_Store
+
 .cache/
 .vscode/
 
 Binaries/
+build/
 
 compile_commands.json
 build.sh

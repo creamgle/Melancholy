@@ -1,14 +1,20 @@
-#include <Melancholy/Core.h>
+#include "Melancholy/Core.h"
+#include "Melancholy/Core/Application.h"
 
 using namespace Melancholy;
 
-int main() {
-    MFATAL("This is a test... {}", 3.14f);
-    MERROR("This is a test... {}", 3.14f);
-    MWARN("This is a test... {}", 3.14f);
-    MINFO("This is a test... {}", 3.14f);
-    MTRACE("This is a test... {}", 3.14f);
-    MDEBUG("This is a test... {}", 3.14f);
+class SandboxApp : public Application {
+public:
+    ~SandboxApp() override = default;
 
-    MASSERT(true == false, "This is a test assert");
+    bool Create() override {
+        MTRACE("Creating sandbox app...");
+        return true;
+    }
+};
+
+int main() {
+    Application* app = new SandboxApp();
+    app->Run();
+    delete app;
 }

@@ -33,14 +33,14 @@ namespace Melancholy {
     }
 }
 
-#define MFATAL(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Fatal, message, __VA_ARGS__)
-#define MERROR(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Error, message, __VA_ARGS__)
+#define MFATAL(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Fatal, message, ##__VA_ARGS__)
+#define MERROR(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Error, message, ##__VA_ARGS__)
 
-#define MWARN(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Warning, message, __VA_ARGS__)
-#define MINFO(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Info, message, __VA_ARGS__)
+#define MWARN(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Warning, message, ##__VA_ARGS__)
+#define MINFO(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Info, message, ##__VA_ARGS__)
 
-#define MTRACE(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Trace, message, __VA_ARGS__)
-#define MDEBUG(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Debug, message, __VA_ARGS__)
+#define MTRACE(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Trace, message, ##__VA_ARGS__)
+#define MDEBUG(message, ...) Melancholy::Log::LogOutput(Melancholy::Log::Level::Debug, message, ##__VA_ARGS__)
 
 #define MASSERT(expr, message) \
     if (!(expr)) { \
