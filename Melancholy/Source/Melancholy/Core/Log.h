@@ -17,7 +17,8 @@ namespace Melancholy {
         };
 
         template<typename... Args>
-        void LogOutput(const Level& level, std::string message, Args&&... args) {
+        void LogOutput(const Level& level, std::string message, Args&&... args) 
+        {
             static const std::string levelTags[6] = {
                 "[FATAL] ",
                 "[ERROR] ",

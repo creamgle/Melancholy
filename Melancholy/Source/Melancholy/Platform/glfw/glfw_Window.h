@@ -17,6 +17,9 @@ namespace Melancholy::glfw {
         void PollEvents() override;
         bool ShouldClose() override;
         
+        void SetSize(uint32 width, uint32 height) override;
+        void SetTitle(const std::string& title) override;
+
     private:
         GLFWwindow* mWindow;
     };

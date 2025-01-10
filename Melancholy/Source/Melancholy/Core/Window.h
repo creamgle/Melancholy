@@ -1,5 +1,6 @@
 #pragma once
 #include "Melancholy/Core.h" 
+#include "Melancholy/Renderer/GraphicsContext.h"
 #include <string>
 
 namespace Melancholy {
@@ -22,8 +23,17 @@ namespace Melancholy {
         virtual void PollEvents() = 0;
         virtual bool ShouldClose() = 0;
 
+        virtual void SetSize(uint32 width, uint32 height) = 0;
+        virtual void SetTitle(const std::string& title) = 0;
+
+        const uint32 GetWidth() const { return mProps.Width; }
+        const uint32 GetHeight() const { return mProps.Height; }
+
+        GraphicsContext& GetGraphicsContext() const { return *mGraphicsContext; }
+
     protected:
         WindowProps mProps;
+        Scope<GraphicsContext> mGraphicsContext;
     };
 
 }

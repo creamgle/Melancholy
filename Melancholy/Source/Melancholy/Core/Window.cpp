@@ -6,7 +6,8 @@
 
 namespace Melancholy {
 
-    Window* Window::CreateWindow(const WindowProps& props) {
+    Window* Window::CreateWindow(const WindowProps& props) 
+    {
         #ifdef M_PLATFORM_DESKTOP
             glfw::glfw_Window* window = new glfw::glfw_Window();
             window->mProps = props;
