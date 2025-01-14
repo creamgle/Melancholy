@@ -16,13 +16,19 @@ namespace Melancholy {
     public:
         virtual ~Application() = default;
         
+		static Application& GetInstance() { return *mInstance; }
+
         virtual bool Create() = 0;
         virtual void Update() { }
 		virtual void Draw() { }
 
 		bool Run(ApplicationConfig config = ApplicationConfig());
 
+		Window& GetWindow() const { return *mWindow; }
+
     private:
+		inline static Application* mInstance;
+
 		ApplicationConfig mConfig;
         Window* mWindow;
     };

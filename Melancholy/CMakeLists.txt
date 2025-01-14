@@ -17,6 +17,12 @@ add_library(Melancholy STATIC
 	Source/Melancholy/Renderer/GraphicsApi.cpp
 	Source/Melancholy/Renderer/Renderer2D.h
 	Source/Melancholy/Renderer/Renderer2D.cpp
+    Source/Melancholy/Renderer/Mesh.h
+    Source/Melancholy/Renderer/Mesh.cpp
+    Source/Melancholy/Renderer/Shader.h
+    Source/Melancholy/Renderer/Shader.cpp
+    Source/Melancholy/Renderer/Texture2D.h
+    Source/Melancholy/Renderer/Texture2D.cpp
 
     Source/Melancholy/Platform/glfw/glfw_Window.h
     Source/Melancholy/Platform/glfw/glfw_Window.cpp
@@ -25,9 +31,15 @@ add_library(Melancholy STATIC
     Source/Melancholy/Platform/OpenGL/OpenGL_Context.cpp
 	Source/Melancholy/Platform/OpenGL/OpenGL_Api.h
 	Source/Melancholy/Platform/OpenGL/OpenGL_Api.cpp
+    Source/Melancholy/Platform/OpenGL/OpenGL_Mesh.h
+    Source/Melancholy/Platform/OpenGL/OpenGL_Mesh.cpp
+    Source/Melancholy/Platform/OpenGL/OpenGL_Shader.h
+    Source/Melancholy/Platform/OpenGL/OpenGL_Shader.cpp
+    Source/Melancholy/Platform/OpenGL/OpenGL_Texture2D.h
+    Source/Melancholy/Platform/OpenGL/OpenGL_Texture2D.cpp
 )
 
-target_include_directories(Melancholy PUBLIC Source)
+target_include_directories(Melancholy PUBLIC Source "Thirdparty/stb/include")
 
 if(APPLE)
     target_link_libraries(Melancholy

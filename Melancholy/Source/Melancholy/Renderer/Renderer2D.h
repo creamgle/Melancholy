@@ -1,6 +1,8 @@
 #pragma once
 #include "Melancholy/Core.h"
+#include "Melancholy/Core/Color.h"
 #include "Melancholy/Renderer/GraphicsApi.h"
+#include "Melancholy/Renderer/Texture2D.h"
 
 namespace Melancholy::Renderer2D {
 
@@ -11,5 +13,8 @@ namespace Melancholy::Renderer2D {
 
 	MAPI void SetBackgroundColor(float r, float g, float b, float a);
 
-	MAPI Scope<GraphicsApi> GetGraphicsApi();
+	MAPI void DrawColoredRect(float x, float y, float w, float h, Color color);
+	MAPI void DrawTexture(float x, float y, float w, float h, Ref<Texture2D> texture);
+
+	MAPI GraphicsApi& GetGraphicsApi();
 }

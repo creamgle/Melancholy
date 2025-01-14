@@ -4,6 +4,8 @@
 namespace Melancholy {
     
 	bool Application::Run(ApplicationConfig config) {
+        mInstance = this;
+
 		mConfig = config;
 		
 		mWindow = Window::CreateWindow(config.WindowConfig);
