@@ -14,8 +14,22 @@ namespace Melancholy::Logger {
         Debug   = 5, // Used for basic termainl debugging; only enabled when the "DEBUG" flag is defined
     };
 
+    typedef void(*LogCallback)(const Level&, const std::string&);
+
     bool Initialise();
     void Shutdown();
+
+    /**
+     * Allows user to define something to be ran instead of
+     * the default print to console and saving to a file
+     * 
+     * @param [LogCallback] callback -> A function pointer to be ran instead of the defaults
+     *      requires two parameters; [const Logger::Level&, const std::string&]
+     * 
+     * @note The "string" is the message the message logged, it goes to the callback formatted
+     *      so there is not need to format
+     */
+    void SetCustomLogCallback(LogCallback callback);
 
     template<typename ... Args>
     void LogOutput(const Level& level, const std::string& message, Args&& ... args)

@@ -9,6 +9,8 @@ namespace Melancholy::Logger {
     static bool _initialised = false;
     static std::ofstream _log_output_file;
 
+    static LogCallback _custom_log_callback;
+
     bool Initialise()
     {
         // Create a folder to store log output files
@@ -36,8 +38,19 @@ namespace Melancholy::Logger {
         _log_output_file.close();
     }
 
+    void SetCustomLogCallback(LogCallback callback)
+    {
+        _custom_log_callback = callback;
+    }
+
     void ml_internal_logger_output(const Level &level, const std::string &message)
     {
+        if (_custom_log_callback)
+        {
+            _custom_log_callback(level, message);
+            return;
+        }
+
         if (!_initialised)
             return;
 
