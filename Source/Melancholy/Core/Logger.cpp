@@ -1,5 +1,4 @@
 #include "Logger.h"
-#include "Melancholy/Core/PlatformDetection.h"
 #include <iostream>
 #include <fstream>
 #include <filesystem>
@@ -81,10 +80,10 @@ namespace Melancholy::Logger {
             ansi_reset = "\e[0m";
         #endif
         
-        std::string out_string = level_tags[(uint8)level] + message + "\n";
-        std::cout << ansi_coloring << out_string << ansi_reset;
+        std::string out_string = level_tags[(uint8)level] + message;
+        std::cout << ansi_coloring << out_string << ansi_reset << "\n";
 
-        _log_output_file << out_string;
+        _log_output_file << out_string << "\n";
     }
 
 }

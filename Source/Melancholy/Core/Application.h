@@ -1,4 +1,5 @@
 #pragma once
+#include "Melancholy/Core/Window.h"
 
 namespace Melancholy {
 
@@ -15,6 +16,8 @@ namespace Melancholy {
          */
         bool Run();
 
+        Window& GetWindow() const { return *mWindow; }
+
     protected:
         
         /**
@@ -25,6 +28,9 @@ namespace Melancholy {
          *      program is not able to create / shouldnt create, return false to close
          */
         virtual bool Create() = 0;
+
+    private:
+        Window* mWindow;
     };
 
 }
