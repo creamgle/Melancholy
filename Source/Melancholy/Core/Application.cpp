@@ -11,8 +11,8 @@ namespace Melancholy {
             return false;
         }
 
-        mWindow = Window::Create();
-        if (!mWindow->Initialise())
+        m_Window = Window::Create();
+        if (!m_Window->Initialise())
         {
             MFATAL("Failed to initialise window! see above reason ^");
             return false;
@@ -24,13 +24,15 @@ namespace Melancholy {
             return false;
         }
 
-        while (!mWindow->ShouldClose())
+        while (!m_Window->ShouldClose())
         {
-            mWindow->PollEvents();
+	        Draw();
+        	m_Window->SwapBuffers();
+        	m_Window->PollEvents();
         }
 
-        mWindow->Shutdown();
-        delete mWindow;
+        m_Window->Shutdown();
+        delete m_Window;
 
         Logger::Shutdown();
 

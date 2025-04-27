@@ -16,7 +16,7 @@ namespace Melancholy {
          */
         bool Run();
 
-        Window& GetWindow() const { return *mWindow; }
+        Window& GetWindow() const { return *m_Window; }
 
     protected:
         
@@ -29,8 +29,10 @@ namespace Melancholy {
          */
         virtual bool Create() = 0;
 
+    	virtual void Draw() { }
+
     private:
-        Window* mWindow;
+        Window* m_Window = nullptr;
     };
 
 }
